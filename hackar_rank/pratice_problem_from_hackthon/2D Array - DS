@@ -1,0 +1,45 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the hourglassSum function below.
+def hourglassSum(array):
+    max_sum = -9999999999
+    row_index = 0
+    while(True):
+        if row_index + 2 >= len(array[0]):
+            break
+
+        column_index = 0
+        while(True):
+            if column_index + 2 >= len(array[0]):
+                break
+
+            sum = array[row_index][column_index] + array[row_index][column_index+1] + array[row_index][column_index+2] + array[row_index+1][column_index+1] + array[row_index+2][column_index] + array[row_index+2][column_index+1] + array[row_index+2][column_index+2]
+            if sum > max_sum:
+                max_sum = sum
+
+            column_index = column_index + 1
+
+        row_index = row_index + 1
+
+    return max_sum
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    arr = []
+
+    for _ in range(6):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    result = hourglassSum(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
