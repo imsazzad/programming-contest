@@ -1,0 +1,48 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the arrayManipulation function below.
+def arrayManipulation(n, queries):
+    array = [0] * n
+    for each_op in queries:
+        num_to_add = each_op[2]
+        start_index = each_op[0]
+        end_index = each_op[1] - 1
+        print("num to add", num_to_add,each_op)
+        array[start_index -1] += num_to_add
+        if(end_index +1 < n):
+            array[end_index + 1] -= num_to_add
+
+    max = 0
+    sum = 0
+    for i in range(n):
+        sum += array[i]
+        if(sum > max):
+            max = sum
+    return max
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    nm = input().split()
+
+    n = int(nm[0])
+
+    m = int(nm[1])
+
+    queries = []
+
+    for _ in range(m):
+        queries.append(list(map(int, input().rstrip().split())))
+
+    result = arrayManipulation(n, queries)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
