@@ -1,0 +1,20 @@
+
+
+# Complete the printLinkedList function below.
+
+#
+# For your reference:
+#
+# SinglyLinkedListNode:
+#     int data
+#     SinglyLinkedListNode next
+#
+#
+def printLinkedList(head):
+    current = head;
+    if(current != None):
+        print(current.data)
+        return printLinkedList(current.next)
+    
+    return
+
