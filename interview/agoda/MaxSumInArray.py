@@ -30,12 +30,13 @@ def get_max_sum_in_array(array):
 
     return current_sum
 
+
 if __name__ == '__main__':
-    # assert(get_max_sum_in_array([100])) == 100
-    # assert(get_max_sum_in_array([100, 10])) == 100
-    # assert(get_max_sum_in_array([100, 101])) == 101
-    # assert(get_max_sum_in_array([100, 105,1 ])) == 105
-    # assert(get_max_sum_in_array([100, 102 ,5 ])) == 105
-    # assert(get_max_sum_in_array([100, 102 ,5,8 ])) == 110
-    # assert(get_max_sum_in_array([100, 102 ,11,8 ])) == 111
-    assert(get_max_sum_in_array([110, 102 ,11,15 ])) == 125
+    assert (get_max_sum_in_array([100])) == 100
+    assert (get_max_sum_in_array([100, 10])) == 100
+    assert (get_max_sum_in_array([100, 101])) == 101
+    assert (get_max_sum_in_array([100, 105, 1])) == 105
+    assert (get_max_sum_in_array([100, 102, 5])) == 105
+    assert (get_max_sum_in_array([100, 102, 5, 8])) == 110
+    assert (get_max_sum_in_array([100, 102, 11, 8])) == 111
+    assert (get_max_sum_in_array([110, 102, 11, 15])) == 125
